@@ -58,7 +58,7 @@ export class RectiveFormComponent implements OnInit {
                   Validators.required,
                   Validators.pattern(this._email),
                   Validators.email,
-                  // ConfirmedValidator('email', 'confirm_email')               
+                               
                   
                 ],
               ],
@@ -121,13 +121,16 @@ export class RectiveFormComponent implements OnInit {
 
 
 
+      },{
+        validator : ConfirmedValidator('email', 'confirm_email') 
       })
-
+     
 
   }
 
 
 
+ 
 
 get fn()
 {

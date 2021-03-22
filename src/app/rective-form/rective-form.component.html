@@ -51,10 +51,11 @@
             <div *ngIf="conmailchk?.errors?.required">Please Enter Email</div>
              <div *ngIf="conmailchk?.errors?.email">Please Enter correct email</div> 
              <div *ngIf="conmailchk?.errors?.pattern">Please Enter only gmail account</div>
-             <!-- <div *ngIf="conmailchk?.errors?.ConfirmedValidator">Email does not match </div>  -->
+             <div *ngIf="form.get('confirm_email').hasError('mustMatch');">Email does not match </div> 
         </div>
     </div>
 
+    
    
  
     <div class="form-group row">
@@ -138,6 +139,7 @@
         <div class="col-md"> 
 
     <input type="submit" class="btn btn-primary col-md" [disabled]='!form.valid'>
+    
     </div>
     </div>
 </form>
