@@ -1,0 +1,27 @@
+<body>
+    
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Category</th>
+        <th scope="col">Short Discription</th>
+        <th scope="col">IMG URL</th>
+      </tr>
+    </thead>
+    <tbody *ngFor='let datam of this._data;let i = index'>
+      <tr *ngFor='let data of datam'>
+        <th scope="row">{{i+1}}</th>
+        <td>{{data.name}}</td>
+        <td>{{data.category}}</td>
+        <td>{{data.discription}}</td>
+        <td>{{data.img}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+
+</body>

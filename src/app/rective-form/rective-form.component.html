@@ -1,0 +1,144 @@
+<body class="container">
+<form action="" class="form" [formGroup]='form'>
+
+
+    <div class="form-group row">
+        <div class="col-md">
+            <label for="name">Name</label>
+            <input 
+                type="text" 
+                formControlName='name' 
+                class="form-control" 
+                id="name" 
+                placeholder="Name*">
+            <div class="alert-danger" *ngIf="fn?.touched && !fn?.valid">
+                <div *ngIf="fn?.errors?.required">Please Enter  Name</div>
+                <div *ngIf="fn?.errors?.minlength">Min length should be 4</div>
+                <div *ngIf="fn?.errors?.pattern">should not contain numbers</div>
+                
+            </div>
+        </div>
+        
+        
+        
+    </div>
+
+
+    <div class="form-group row-md email">
+        <label for="email">Email</label>
+        <input type="email" 
+                formControlName='email' 
+                class="form-control" 
+                placeholder="Email*" 
+                id="email">
+        <div class="alert-danger" *ngIf="mailchk?.touched && !mailchk?.valid">
+            <div *ngIf="mailchk?.errors?.required">Please Enter Email</div>
+             <div *ngIf="mailchk?.errors?.email">Please Enter correct email</div> 
+             <div *ngIf="mailchk?.errors?.pattern">Please Enter only gmail account</div>
+            
+        </div>
+    </div>
+
+
+    <div class="form-group row-md email">
+        <label for="conemail">Confirm Email</label>
+        <input type="email" 
+                formControlName='confirm_email' 
+                class="form-control" 
+                placeholder="Confirm Email*" 
+                id="conemail">
+        <div class="alert-danger" *ngIf="conmailchk?.touched && !conmailchk?.valid">
+            <div *ngIf="conmailchk?.errors?.required">Please Enter Email</div>
+             <div *ngIf="conmailchk?.errors?.email">Please Enter correct email</div> 
+             <div *ngIf="conmailchk?.errors?.pattern">Please Enter only gmail account</div>
+             <!-- <div *ngIf="conmailchk?.errors?.ConfirmedValidator">Email does not match </div>  -->
+        </div>
+    </div>
+
+   
+ 
+    <div class="form-group row">
+        <div class="col-md">
+            <label for="degree">Garduation Degree*</label>
+            <input type="text" 
+                    formControlName='degree' 
+                    placeholder="Degree*"
+                     class="form-control" 
+                     id="degree">
+            <div class="alert-danger" *ngIf="degree?.touched && !degree?.valid">
+                <div *ngIf="degree?.errors?.required">Please Graduaction Degree</div>
+               
+                
+                
+            </div>
+        </div>
+       
+        <div class="col-md">
+            <label for="dob">DOB</label>
+            <input type="date" 
+                    formControlName='dob' 
+                    placeholder="dob" 
+                    class="form-control"  
+                    id="dob">
+            <div class="alert-danger" *ngIf="dob?.touched && !dob?.valid ">
+                
+                <div *ngIf="dob?.errors?.required">Please Enter DOB</div>
+                
+            </div>
+        </div>
+
+    </div>
+
+  
+    
+    <div class="form-group row">
+        <div class="col-md">
+            <label for="country">Country</label>
+            <input type="text" 
+                    placeholder="country*"
+                     formControlName='country' 
+                     class="form-control" 
+                     id="country">
+            <div class="alert-danger" *ngIf="country?.touched && !country?.valid ">
+                
+                <div *ngIf="country?.errors?.required">Please Enter Country</div>
+                
+            </div>
+        </div>
+        <div class="col-md">
+            <label for="state">State</label>
+            <input type="text" 
+                    placeholder="State*" 
+                    class="form-control"
+                     formControlName='state' 
+                     id="state">
+            <div class="alert-danger" *ngIf="state?.touched && !state?.valid ">
+                
+                <div *ngIf="state?.errors?.required">Please Enter State</div>
+                
+            </div>
+        </div>
+        <div class="col-md">
+            <label for="city">City</label>
+            <input type="text"
+                     placeholder="City*"
+                      class="form-control" 
+                       formControlName='city'
+                        id="city">
+            <div class="alert-danger" *ngIf="city?.touched && !city?.valid ">
+                
+                <div *ngIf="city?.errors?.required">Please Enter State</div>
+                
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <div class="form-group row">
+        <div class="col-md"> 
+
+    <input type="submit" class="btn btn-primary col-md" [disabled]='!form.valid'>
+    </div>
+    </div>
+</form>
+</body>

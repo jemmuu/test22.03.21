@@ -1,0 +1,12 @@
+body
+{
+    width: 70%;
+    margin: 0% , auto;
+    padding-top: 8%;
+}
+
+.form-control.ng-invalid.ng-touched
+{
+  border: 2px solid red;
+}
+

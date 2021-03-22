@@ -1,0 +1,59 @@
+<body class="container">
+    <form action="" class="form" [formGroup]='_form' (ngSubmit)='storeData()'>
+    
+    
+        <div class="form-group row">
+            <div class="col-md">
+                <label for="name">Product Name<span>*</span></label>
+                <input type="text" formControlName='proname' class="form-control" id="name" placeholder="Product Name">
+                <div class="alert-danger" *ngIf="proname?.touched && !proname?.valid">
+                    <div *ngIf="proname?.errors?.required">Please Enter  Product Name</div>
+                    <div *ngIf="proname?.errors?.minlength">Min length should be 4</div>
+                    
+                </div>
+            </div>                      
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md">
+                <label for="Category">Product Category<span>*</span></label>
+                <input type="text" formControlName='category' class="form-control" id="Category" placeholder="Product Category">
+                <div class="alert-danger" *ngIf="category?.touched && !category?.valid">
+                    <div *ngIf="category?.errors?.required">Please Enter  Product Category</div>
+                    <div *ngIf="category?.errors?.minlength">Min length should be 4</div>
+                    
+                </div>
+            </div>                      
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md">
+                <label for="discription">Product discription<span>*</span></label>
+                <textarea formControlName='discription' class="form-control" id="discription" placeholder="Product discription">Product discription</textarea>
+                <div class="alert-danger" *ngIf="discription?.touched && !discription?.valid">
+                    <div *ngIf="discription?.errors?.required">Please Enter  Product discription</div>
+                    <div *ngIf="discription?.errors?.minlength">Min length should be 4</div>
+                    
+                </div>
+            </div>                      
+        </div>
+        <div class="form-group row">
+            <div class="col-md">
+                <label for="img">Product Image URL<span>*</span></label>
+                <input type="text" formControlName='img' class="form-control" id="img" placeholder="IMG URL">
+                <div class="alert-danger" *ngIf="img?.touched && !img?.valid">
+                    <div *ngIf="img?.errors?.required">Please Enter  Product discription</div>
+                    <div *ngIf="img?.errors?.minlength">Min length should be 4</div>
+                    
+                </div>
+            </div>                      
+        </div>
+        <br>
+        <div class="form-group row">
+            <div class="col-md"> 
+    
+        <input type="submit" class="btn btn-primary col-md" [disabled]='!_form.valid'>
+        </div>
+        </div>
+    </form>
+    </body>
